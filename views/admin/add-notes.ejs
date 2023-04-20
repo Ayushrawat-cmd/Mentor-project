@@ -1,6 +1,7 @@
-<%- include('../partials/courses/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
-<body>
+
+<body>  
 
 <div class="flog">
     <div class="log">
@@ -12,9 +13,9 @@
                 <div class="field-row">
                     <div class="field-col">
                         <div class="inputBox">
-                            <select required="required" name="course" id="format">
+                            <select required="required" name="course" id="course" onchange="coursefunc(this);" >
                                 <option selected disabled>Choose a course</option>
-                                <option value="btech-cse">B.TECH -CSE</option>
+                                <option value="btech-CSE">B.TECH -CSE</option>
                                 <option value="btech-ECE">B.TECH -ECE</option>
                                 <option value="btech-AI">B.TECH -AI</option>
                                 <option value="BCA">BCA</option>
@@ -25,16 +26,9 @@
 
                     <div class="field-col">
                         <div class="inputBox">
-                            <select name="semester" required="required" id="format">
+                            <select name="semester" required="required" onchange="semfunc(this)" id="semester">
                                 <option selected disabled>Choose a Semester</option>
-                                <option value="sem1">Semester-1</option>
-                                <option value="sem2">Semester-2</option>
-                                <option value="sem3">Semester-3</option>
-                                <option value="sem4">Semester-4</option>
-                                <option value="sem5">Semester-5</option>
-                                <option value="sem6">Semester-6</option>
-                                <option value="sem7">Semester-7</option>
-                                <option value="sem8">Semester-8</option>
+                                
                             </select>
                             <i></i>
                         </div>
@@ -42,75 +36,9 @@
 
                     <div class="field-col">
                         <div class="inputBox">
-                            <select name="subject" type="text" required="required" id="format">
+                            <select name="subject" type="text" required="required" id="subject">
                                 <option selected disabled>Choose Subject</option>
-                                <option value="Applied Physics – I">Applied Physics – I</option>
-                                <option value="Mathematics – I">Mathematics – I</option>
-                                <option value="Basic Electrical Engineering">Basic Electrical Engineering</option>
-                                <option value="Engineering Graphics & Design">Engineering Graphics & Design</option>
-                                <option value="Applied Physics - 1 Lab">Applied Physics - 1 Lab</option>
-                                <option value="Basic Electrical Engineering Lab">Basic Electrical Engineering Lab</option>
-                                <option value="Engineering Graphics & Design Lab">Engineering Graphics & Design Lab</option>
-                                <option value="Essence of Indian Traditional  knowledge">Essence of Indian Traditional  knowledge</option>
-                                <option value="Applied Physics – II">Applied Physics – II</option>
-                                <option value="Mathematics – II">Mathematics – II </option>
-                                <option value="Programming for Problem Solving">Programming for Problem Solving</option>
-                                <option value="Workshop /Manufacturing Practices">Workshop /Manufacturing Practices</option>
-                                <option value="English Language">English Language</option>
-                                <option value="Applied Physics – II Lab">Applied Physics – II Lab</option>
-                                <option value="Programming for Problem Solving Lab">Programming for Problem Solving Lab</option>
-                                <option value="Workshop /Manufacturing Practices Lab">Workshop /Manufacturing Practices Lab</option>
-                                <option value="English Language Lab">English Language Lab</option>
-                                <option value="Basic Engineering Mechanics">Basic Engineering Mechanics</option>
-                                <option value="Environmental Sciences">Environmental Sciences</option>
-                                <option value="Analog Electronic Circuits">Analog Electronic Circuits</option>
-                                <option value="Chemistry">Chemistry</option>
-                                <option value="Data structure & Algorithms">Data structure & Algorithms</option>
-                                <option value="Digital Electronics">Digital Electronics</option>
-                                <option value="IT Workshop (Sci Lab/MATLAB)">IT Workshop (Sci Lab/MATLAB)</option>
-                                <option value="Humanities-I (Effective Technical Communication)">Humanities-I (Effective Technical Communication)</option>
-                                <option value="Analog Electronic Circuits Lab">Analog Electronic Circuits Lab</option>
-                                <option value="Data structure & Algorithms Lab">Data structure & Algorithms Lab</option>
-                                <option value="Digital Electronics Lab">Digital Electronics Lab</option>
-                                <option value="IT Workshop (Sci Lab/MATLAB) Lab">IT Workshop (Sci Lab/MATLAB) Lab</option>
-                                <option value="Mathematics III">Mathematics III</option>
-                                <option value="Discrete Mathematics">Discrete Mathematics</option>
-                                <option value="Computer Organization and Architecture">Computer Organization and Architecture</option>
-                                <option value="Operating Systems">Operating Systems</option>
-                                <option value="Design and Analysis of Algorithms">Design and Analysis of Algorithms</option>
-                                <option value="Organizational Behaviour">Organizational Behaviour</option>
-                                <option value="Computer Organization and Architecture Lab">Computer Organization and Architecture Lab</option>
-                                <option value="Operating Systems Lab">Operating Systems Lab</option>
-                                <option value="Design and Analysis of Algorithms Lab">Design and Analysis of Algorithms Lab</option>
-                                <option value="Disaster Management">Disaster Management</option>
-                                <option value="Signals & Systems">Signals & Systems</option>
-                                <option value="Database Management Systems">Database Management Systems</option>
-                                <option value="Formal Language & Automata Theory">Formal Language & Automata Theory</option>
-                                <option value="Object Oriented Programming">Object Oriented Programming</option>
-                                <option value="Humanities II (Pro-fessional Practice, Law & Ethics)">Humanities II (Pro-fessional Practice, Law & Ethics)</option>
-                                <option value="Departmental Elective –I (Macine Learning)">Departmental Elective –I (Macine Learning)</option>
-                                <option value="Database Management Systems Lab">Database Management Systems Lab</option>
-                                <option value="Object Oriented Programming Lab">Object Oriented Programming Lab</option>
-                                <option value="Constitution of India">Constitution of India</option>
-                                <option value="Project – I">Project – I</option>
-                                <option value="Compiler Design">Compiler Design</option>
-                                <option value="Computer Networks">Computer Networks</option>
-                                <option value="Compiler Design Lab">Compiler Design Lab</option>
-                                <option value="Computer Networks Lab">Computer Networks Lab</option>
-                                <option value="Departmental Elective –II (Data Mining )">Departmental Elective –II (Data Mining )</option>
-                                <option value="Departmental Elective – III (Deep Learning and Neural Network)">Departmental Elective – III (Deep Learning and Neural Network)</option>
-                                <option value="Open Elective – I (Humanities)">Open Elective – I (Humanities)</option>
-                                <option value="Project – II">Project – II</option>
-                                <option value="Biology">Biology</option>
-                                <option value="IPR and Cyber laws">IPR and Cyber laws</option>
-                                <option value="Advanced database Management System">Advanced database Management System</option>
-                                <option value="Departmental Elective – IV">Departmental Elective – IV</option>
-                                <option value="Departmental Elective – V">Departmental Elective – V</option>
-                                <option value="Open Elective – II">Open Elective – II</option>
-                                <option value="Dissertation">Dissertation</option>
-                                <option value="Departmental Elective –VI">Departmental Elective –VI</option>
-                                <option value="Open Elective – III">Open Elective – III</option>
-                                <option value="Open Elective – IV">Open Elective – IV</option>
+                                
 
                             </select>
                             <i></i>
@@ -129,4 +57,161 @@
     </div>
 </div>
 </body>
+<script >
+    function coursefunc(sel){
+        const courseValue = sel.options[sel.selectedIndex].value;
+        const sem = document.getElementById("semester");
+        console.log(courseValue);
+        if(courseValue === 'btech-CSE' || courseValue === 'btech-ECE' || courseValue === 'btech-AI'){
+            sem.innerHTML=`
+            <option selected disabled>Choose a Semester</option>
+            <option value="sem1">Semester-1</option>
+            <option value="sem2">Semester-2</option>
+            <option value="sem3">Semester-3</option>
+            <option value="sem4">Semester-4</option>
+            <option value="sem5">Semester-5</option>
+            <option value="sem6">Semester-6</option>
+            <option value="sem7">Semester-7</option>
+            <option value="sem8">Semester-8</option>
+            `
+        }
+        else if(courseValue === 'BCA'){
+            sem.innerHTML=`
+            <option selected disabled>Choose a Semester</option>
+            <option value="sem1">Semester-1</option>
+            <option value="sem2">Semester-2</option>
+            <option value="sem3">Semester-3</option>
+            <option value="sem4">Semester-4</option>
+            <option value="sem5">Semester-5</option>
+            <option value="sem6">Semester-6</option>`
+        }
+      }
+    function semfunc(sel){
+        const semValue = sel.options[sel.selectedIndex].value;
+        const subject = document.getElementById("subject");
+        const course = document.getElementById("course");
+        const courseValue = course.options[course.selectedIndex].value;
+        if(courseValue === 'btech-CSE'){
+            if(semValue === 'sem1'){
+                subject.innerHTML =`
+                <option selected disabled>Choose Subject</option>
+                <option value="Applied Physics – I">Applied Physics – I</option>
+                <option value="Mathematics – I">Mathematics – I</option>
+                <option value="Basic Electrical Engineering">Basic Electrical Engineering</option>
+                <option value="Engineering Graphics & Design">Engineering Graphics & Design</option>
+                <option value="Applied Physics - 1 Lab">Applied Physics - 1 Lab</option>
+                <option value="Basic Electrical Engineering Lab">Basic Electrical Engineering Lab</option>
+                <option value="Engineering Graphics & Design Lab">Engineering Graphics & Design Lab</option>
+                <option value="Essence of Indian Traditional  knowledge">Essence of Indian Traditional  knowledge</option>
+                `
+
+            }
+            else if(semValue === 'sem2'){
+                subject.innerHTML =`
+                <option selected disabled>Choose Subject</option>
+                <option value="Mathematics – II">Mathematics – II </option>
+                <option value="Programming for Problem Solving">Programming for Problem Solving</option>
+                <option value="Workshop /Manufacturing Practices">Workshop /Manufacturing Practices</option>
+                <option value="English Language">English Language</option>
+                <option value="Applied Physics – II Lab">Applied Physics – II Lab</option>
+                <option value="Programming for Problem Solving Lab">Programming for Problem Solving Lab</option>
+                <option value="Workshop /Manufacturing Practices Lab">Workshop /Manufacturing Practices Lab</option>
+                <option value="English Language Lab">English Language Lab</option>
+                <option value="Basic Engineering Mechanics">Basic Engineering Mechanics</option>
+                <option value="Environmental Sciences">Environmental Sciences</option>
+                `
+            }
+            else if(semValue === 'sem3'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Analog Electronic Circuits">Analog Electronic Circuits</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Data structure & Algorithms">Data structure & Algorithms</option>
+                                <option value="Digital Electronics">Digital Electronics</option>
+                                <option value="IT Workshop (Sci Lab/MATLAB)">IT Workshop (Sci Lab/MATLAB)</option>
+                                <option value="Humanities-I (Effective Technical Communication)">Humanities-I (Effective Technical Communication)</option>
+                                <option value="Analog Electronic Circuits Lab">Analog Electronic Circuits Lab</option>
+                                <option value="Data structure & Algorithms Lab">Data structure & Algorithms Lab</option>
+                                <option value="Digital Electronics Lab">Digital Electronics Lab</option>
+                                <option value="IT Workshop (Sci Lab/MATLAB) Lab">IT Workshop (Sci Lab/MATLAB) Lab</option>
+                                <option value="Mathematics III">Mathematics III</option>
+                
+                `
+            }
+            else if(semValue === 'sem4'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Discrete Mathematics">Discrete Mathematics</option>
+                                <option value="Computer Organization and Architecture">Computer Organization and Architecture</option>
+                                <option value="Operating Systems">Operating Systems</option>
+                                <option value="Design and Analysis of Algorithms">Design and Analysis of Algorithms</option>
+                                <option value="Organizational Behaviour">Organizational Behaviour</option>
+                                <option value="Computer Organization and Architecture Lab">Computer Organization and Architecture Lab</option>
+                                <option value="Operating Systems Lab">Operating Systems Lab</option>
+                                <option value="Design and Analysis of Algorithms Lab">Design and Analysis of Algorithms Lab</option>
+                                <option value="Disaster Management">Disaster Management</option>
+                
+                `
+            }
+            else if(semValue === 'sem5'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Signals & Systems">Signals & Systems</option>
+                                <option value="Database Management Systems">Database Management Systems</option>
+                                <option value="Formal Language & Automata Theory">Formal Language & Automata Theory</option>
+                                <option value="Object Oriented Programming">Object Oriented Programming</option>
+                                <option value="Humanities II (Pro-fessional Practice, Law & Ethics)">Humanities II (Pro-fessional Practice, Law & Ethics)</option>
+                                <option value="Departmental Elective –I (Macine Learning)">Departmental Elective –I (Macine Learning)</option>
+                                <option value="Database Management Systems Lab">Database Management Systems Lab</option>
+                                <option value="Object Oriented Programming Lab">Object Oriented Programming Lab</option>
+                                <option value="Constitution of India">Constitution of India</option>
+                
+                `
+            }
+            else if(semValue === 'sem6'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Project – I">Project – I</option>
+                                <option value="Compiler Design">Compiler Design</option>
+                                <option value="Computer Networks">Computer Networks</option>
+                                <option value="Compiler Design Lab">Compiler Design Lab</option>
+                                <option value="Computer Networks Lab">Computer Networks Lab</option>
+                                <option value="Departmental Elective –II (Data Mining )">Departmental Elective –II (Data Mining )</option>
+                                <option value="Departmental Elective – III (Deep Learning and Neural Network)">Departmental Elective – III (Deep Learning and Neural Network)</option>
+                                <option value="Open Elective – I (Humanities)">Open Elective – I (Humanities)</option>
+                
+                `
+            }
+            else if(semValue === 'sem7'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Project – II">Project – II</option>
+                                <option value="Biology">Biology</option>
+                                <option value="IPR and Cyber laws">IPR and Cyber laws</option>
+                                <option value="Advanced database Management System">Advanced database Management System</option>
+                                <option value="Departmental Elective – IV">Departmental Elective – IV</option>
+                                <option value="Departmental Elective – V">Departmental Elective – V</option>
+                                <option value="Open Elective – II">Open Elective – II</option>
+                
+                `
+            }
+            else if(semValue === 'sem8'){
+                subject.innerHTML=`
+                <option selected disabled>Choose Subject</option>
+                <option value="Dissertation">Dissertation</option>
+                                <option value="Departmental Elective –VI">Departmental Elective –VI</option>
+                                <option value="Open Elective – III">Open Elective – III</option>
+                                <option value="Open Elective – IV">Open Elective – IV</option>
+                
+                `
+            }
+        }
+        else if(courseValue === 'btech-ECE'){
+            subject.innerHTML=`
+            <option>fdfd</option>
+            `
+        }
+    }
+</script>
 </html>
+

@@ -114,6 +114,12 @@
     }
   });
 
+  // dynamic add notes options
+  on('change','#course', (sel)=>{
+    console.log(sel.innerText());
+  })
+  
+
   /**
    * Animation on scroll
    */
