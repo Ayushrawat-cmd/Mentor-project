@@ -57,7 +57,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use(
   session({
-    secret: "this is rawat secret",
+    secret: "Our secret",
     store: store,
     resave: false,
     saveUninitialized: false,
