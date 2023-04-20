@@ -2,11 +2,11 @@ const User = require("../model/user");
 const bcrypt = require("bcrypt");
 
 exports.getLoginPage = (req,res,next)=>{
-    res.render("auth/login", {emailError: req.flash("emailError"), passwordError: req.flash("passwordError")});
+    res.render("auth/login", {emailError: req.flash("emailError"),title:'Login', passwordError: req.flash("passwordError")});
 };
 
 exports.getRegisterPage = (req,res,next)=>{
-    res.render("auth/sign-up",{error: req.flash("error")});
+    res.render("auth/sign-up",{error: req.flash("error"), title: 'Register'});
 };
 
 exports.postRegisterPage = (req,res,next) =>{

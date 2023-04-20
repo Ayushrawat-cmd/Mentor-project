@@ -3,7 +3,7 @@ const Notes = require("../model/notes");
 const upload = require("../middleware/upload");
 
 exports.getAddNotesPage = (req,res,next) =>{
-    res.render("admin/add-notes",{path:'admin/add-notes', isAuthenticated: req.session.loggedIn, user:req.session.user});
+    res.render("admin/add-notes",{path:'admin/add-notes',title:'Add Notes', isAuthenticated: req.session.loggedIn, user:req.session.user});
 }   
 
 exports.postAddNotesPage = (req,res,next)=>{

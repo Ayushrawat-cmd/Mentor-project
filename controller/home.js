@@ -6,7 +6,8 @@ exports.getHomePage = (req, res, next) => {
       path: "/",
       isAuthenticated: req.session.loggedIn,
       user: req.session.user,
-      numOfUsers: numberOfUsers
+      numOfUsers: numberOfUsers,
+      title:'Spectra'
     });
   });
 };
@@ -17,6 +18,8 @@ exports.getCoursepage = (req, res, next) => {
     isAuthenticated: req.session.loggedIn,
     user: req.session.user,
     errorMessage: req.flash("error"),
+    title:'Courses'
+    
   });
 };
 
@@ -25,6 +28,7 @@ exports.getContactPage = (req, res, next) => {
     path: "/contact",
     isAuthenticated: req.session.loggedIn,
     user: req.session.user,
+    title:'Contacts'
   });
 };
 
@@ -33,6 +37,7 @@ exports.getEventPage = (req, res, next) => {
     path: "/events",
     isAuthenticated: req.session.loggedIn,
     user: req.session.user,
+    title:'Events'
   });
 };
 
@@ -41,5 +46,6 @@ exports.getToolPage = (req, res, next) => {
     path: "/tools",
     isAuthenticated: req.session.loggedIn,
     user: req.session.user,
+    title:'Tools'
   });
 };
