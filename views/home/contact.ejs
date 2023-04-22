@@ -1,4 +1,26 @@
 <%- include('../partials/head.ejs') %>
+<script type="text/javascript">
+  function sendEmail() {
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      // auth:{
+      //   user:"ayushrawat324@gmail.com",
+      //   pass: "ccmslmtpesrruknl",
+      // },
+      Username: "ayushrawat324@gmail.com",
+      Password: "70F90E5C9B055476888F7EB3CF30DEFA1566",
+      To: 'ayushrawat324@gmail.com',
+      From: "ayushrawat324@gmail.com",
+      Subject:`CTSI website:- ` ,
+      Body: `<html><h2>Name:- `
+    })
+      .then(function (message) {
+        // if(message)
+        console.log(message);
+        alert("mail sent successfully")
+      });
+  }
+</script>
 <body>
 
   <%- include('../partials/nav.ejs') %>
@@ -53,7 +75,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="mailto:himaniadhikari25@gmail.com" method="post" role="form" class="email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -68,12 +90,12 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <!-- <div class="field-col "> -->
+                <div class="inputBox">
+                    <input type="file" name="file" class="file" >
+                </div>
+              <!-- </div> -->
+              <div class="text-center"><button onclick="sendEmail()" type="submit">Send Message</button></div>
             </form>
 
           </div>
