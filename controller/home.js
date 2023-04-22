@@ -1,14 +1,19 @@
 const User = require("../model/user");
+const Notes = require("../model/notes");
 exports.getHomePage = (req, res, next) => {
-  User.countDocuments().then((numberOfUsers) => {
-    // console.log(numberOfUsers);
-    res.render("home/index", {
-      path: "/",
-      isAuthenticated: req.session.loggedIn,
-      user: req.session.user,
-      numOfUsers: numberOfUsers,
-      title:'Spectra'
+  Notes.countDocuments().then((numOfNotes)=>{
+    User.countDocuments().then((numberOfUsers) => {
+      // console.log(numberOfUsers);
+      res.render("home/index", {
+        path: "/",
+        isAuthenticated: req.session.loggedIn,
+        user: req.session.user,
+        numOfUsers: numberOfUsers,
+        numOfNotes: numOfNotes,
+        title:'SEST.JH'
+      });
     });
+
   });
 };
 

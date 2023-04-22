@@ -16,14 +16,14 @@
             <p class="user-error-message"><%= emailError %></p>
             <% } %>
             <div class="inputBox">
-                <input name="password" type="password" required="required">
+                <input id="show" name="password" type="password" required="required">
                 <span>Password</span>
                 <i class="fa-solid fa-eye" id="eye"></i>
             </div>
             <% if(passwordError.length !=0) { %>
                 <p class="user-error-message"><%= passwordError %></p>
             <% } %>
-            <div class="password_checkbox"><input type="checkbox" ><p>Show Password</p></div>
+            <div class="password_checkbox"><input type="checkbox" onclick="myFunction()"><p>Show Password</p></div>
 
             <div class="forget_password"><a href="#">Forget Password?</a></div>
             <button class="login_button" type="submit">Login</button>
@@ -33,5 +33,17 @@
      </div>
     </div>
 </div>
+<script type="text/javascript">
+    function myFunction(){
+        var show= document.getElementById('show');
+        if (show.type=='password') {
+            show.type='text';
+        }
+        else{
+            show.type='password';
+        }
+         
+    }
+</script>
 </body>
 </html>

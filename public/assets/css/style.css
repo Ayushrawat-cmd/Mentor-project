@@ -1098,7 +1098,6 @@ section {
 }
 
 .counts .counters span {
-  margin-left: 250px ;
   font-size: 48px;
   display: block;
   color: #11d6d0;
@@ -1106,7 +1105,6 @@ section {
 }
 
 .counts .counters p {
-  margin-left: 255px;
   font-family: "Raleway", sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -1471,8 +1469,13 @@ section {
   background: #f9faf9;
 }
 
-#footer .footer-top .footer-contact {
+/* #footer .footer-top .footer-contact {
   margin: 0 0 30px 200px;
+  
+} */
+
+.footer-add-email{
+  justify-content: space-around;
   
 }
 
@@ -1502,6 +1505,7 @@ section {
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
+  width: fit-content;
 }
 
 #footer .footer-top .footer-links ul {
