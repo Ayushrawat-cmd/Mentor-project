@@ -6,8 +6,6 @@ const mongoose = require("mongoose");
 const mongoDbStore = require("connect-mongodb-session")(session);
 const flash = require("connect-flash");
 const Grid = require("gridfs-stream");
-const multer = require("multer");
-const GridFsStorage = require("multer-gridfs-storage").GridFsStorage;
 // gfs = require("./middleware/gfs");
 const app = express();
 app.set("views", "views");
@@ -23,33 +21,6 @@ const store = mongoDbStore({
   collection: "sessions",
 });
 
-
-const storage = new GridFsStorage({
-    url: MONGODB_URI,
-    file: (req, file) => {
-      return new Promise((resolve, reject) => {
-          const filename = file.originalname;
-          const fileInfo = {
-            filename: filename.toLowerCase(),
-            bucketName: 'uploads'
-          };
-          resolve(fileInfo);
-      });
-    }
-  });
-
-const upload = multer({storage: storage});
-app.use(upload.single('file'));
-
-
-// const fileStorage = multer.diskStorage({
-//   destination:(req,file,cb)=>{
-//     cb(null, "pdfs")
-//   },
-//   filename:(req,file,cb)=> {
-//     cb(null, new Date().toISOString+'-'+ file.originalname);
-//   }
-// });
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyparser.urlencoded({ extended: false }));

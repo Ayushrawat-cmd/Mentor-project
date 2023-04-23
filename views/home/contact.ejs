@@ -69,7 +69,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="mailto:himaniadhikari25@gmail.com" method="post" role="form" class="email-form">
+            <form action="/send-email" method="post" role="form" class="email-form" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -86,7 +86,7 @@
               </div>
               <!-- <div class="field-col "> -->
                 <div class="inputBox">
-                    <input type="file" name="file" class="file" >
+                    <input type="file" name="user_notes" class="file" >
                 </div>
               <!-- </div> -->
               <div class="text-center"><button onclick="sendEmail()" type="submit">Send Message</button></div>
