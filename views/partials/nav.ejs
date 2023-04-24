@@ -13,7 +13,7 @@
         <li><a class="<%= path == '/events'? 'active' : ' ' %>" href="/events">Events</a></li>
         <li><a class="<%= path == '/contact'? 'active' : ' ' %>" href="/contact">Contact</a></li>
         <% if (isAuthenticated) { %>
-          <% if(user.email == "ayushrawat324@gmail.com") { %>
+          <% if(user.email == "ayushrawat324@gmail.com" || user.email == "himaniadhikari25@gmail.com") { %>
             <li><a class="<%= path == '/admin/add-notes'? 'active' : ' ' %>" href="/admin/add-notes">Add Notes</a></li>
           <% } %>
           <form action="/logout" method="post">

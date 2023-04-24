@@ -1,7 +1,7 @@
 const alert = require("alert");
 module.exports = (req,res,next)=>{
     if(req.session.loggedIn){
-        if(req.session.user.email == "ayushrawat324@gmail.com")
+        if(req.session.user.email == "ayushrawat324@gmail.com" || req.session.user.email == "himaniadhikari25@gmail.com")
             return next();
     }
     else{
